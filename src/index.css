@@ -1,0 +1,62 @@
+.navbar {
+    color: rgb(223, 232, 239);
+    background-image: url("https://s2-epocanegocios.glbimg.com/d9eDQDOidgSv7Is8xnV5YW2LjQ4=/0x0:2309x1299/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e536e40f1baf4c1a8bf1ed12d20577fd/internal_photos/bs/2023/P/O/nvxYBIRYWxAEz6GvNA8Q/gettyimages-1394447779.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 900;
+    font-style: oblique;
+    margin-bottom: none;
+}
+
+.navbardos {
+    color: rgb(1, 7, 12);
+    background: rgb(244, 242, 242);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    margin-top: none;
+}
+
+.navbardos img {
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+}
+
+.navbardos li {
+    margin-right: 50px;
+    list-style: none;
+}
+
+.like {
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    margin-left: none;
+    margin-right: 35px;
+    background: none;
+    border: none;
+    width: 10px;
+    font-size: 40px;
+    color: white;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+.card {
+    margin-left: 20px;
+    background: rgb(252, 252, 252);
+}
+
+.but {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 8px;
+}
