@@ -54,9 +54,46 @@
     background: rgb(252, 252, 252);
 }
 
+.card img {
+    margin: auto;
+    width: 280px;
+    height: 250px;
+}
+
 .but {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-left: 8px;
+}
+
+.cardG {
+    background: rgb(252, 252, 252);
+    height: 370px;
+}
+
+.cardBody {
+    display: flex;
+    margin: 5px;
+}
+
+.cardG img {
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 400px;
+    height: 300px;
+}
+
+.Links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px;
+}
+
+.card1 {
+    margin: auto;
+    background: rgb(252, 252, 252);
+    width: 800px;
+    border: solid black 1px;
 }

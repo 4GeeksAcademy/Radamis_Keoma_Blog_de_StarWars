@@ -1,19 +1,60 @@
 import { Link } from "react-router-dom";
+import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 
-export default function CardG() {
+export function CardP({ img, data }) {
+    const { name, created } = data;
 
     return (
         <div>
-            <div className="card" style={{width: "18rem"}}>
-                <img src="https://blog.teufelaudio.es/wp-content/uploads/2022/05/titelbild-star-wars.jpg.webp" class="card-img-top" alt="..."/>
+            <div className="card" style={{ width: "18rem" }}>
+                <img
+                    src={img}
+                    className="card-img-top"
+                    alt={name}
+                    onError={(e) => {
+                        e.target.src =
+                            "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+                    }}
+                />
                 <div className="card-body">
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <h4 className="card-text">{name}</h4>
+                    <span>{created}</span>
                 </div>
                 <div className="but">
-                <button>Learn More!</button>
-                <button className="like">♥</button>
+                    <button><Link to={`/demo/:uid`}>Learn More!</Link></button>
+                    <button className="like">♥</button>
                 </div>
             </div>
+        </div>
+    );
+}
+
+export function CardG({ img, data }) {
+    if (!data) return null;
+    const { name, uid } = data;
+
+    return (
+        <div className="card1">
+            <div className="cardG">
+                <div className="cardBody">
+                    <img src={img}
+                        className="card-img-top"
+                        alt={name}
+                        onError={(e) => {
+                            e.target.src =
+                                "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+                        }}
+                    />
+                    <p className="card-text">{name}</p>
+                </div>
+            </div>
+            <div className="Links">
+                <Link to={`/demo/${uid}`}>Color de Ojos</Link>
+                <Link to={`/demo/${uid}`}>Altura</Link>
+                <Link to={`/demo/${uid}`}>Massa</Link>
+                <Link to={`/demo/${uid}`}>Gênero</Link>
+            </div>
+
         </div>
     );
 }
