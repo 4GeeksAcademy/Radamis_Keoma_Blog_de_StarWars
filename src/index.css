@@ -97,3 +97,19 @@
     width: 800px;
     border: solid black 1px;
 }
+
+.datos {
+    text-align: center;
+    padding: none;
+    margin-bottom: none;
+}
+
+.datos p {
+    color: rgb(10, 10, 10);
+    margin-top: none;
+}
+
+.datos h6 {
+    color: rgb(94, 94, 234);
+    margin-bottom: none;
+}
