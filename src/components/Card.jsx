@@ -6,7 +6,7 @@ export function CardP({ img, data }) {
 
     return (
         <div>
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: "16rem" }}>
                 <img
                     src={img}
                     className="card-img-top"
@@ -22,6 +22,34 @@ export function CardP({ img, data }) {
                 </div>
                 <div className="but">
                     <button><Link to={`/demo/${uid}`}>Learn More!</Link></button>
+                    <button className="like">♥</button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export function CardPdos({ img, data }) {
+    const { name, created, uid } = data;
+
+    return (
+        <div>
+            <div className="card" style={{ width: "16rem" }}>
+                <img
+                    src={img}
+                    className="card-img-top"
+                    alt={name}
+                    onError={(e) => {
+                        e.target.src =
+                            "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+                    }}
+                />
+                <div className="card-body">
+                    <h4 className="card-text">{name}</h4>
+                    <span>{created}</span>
+                </div>
+                <div className="but">
+                    <button><Link to={`/demos/${uid}`}>Learn More!</Link></button>
                     <button className="like">♥</button>
                 </div>
             </div>
@@ -47,7 +75,7 @@ export function CardG({ img, data }) {
                     />
                     <div className="datos">
                     <h4 className="card-text">{name}</h4>
-                    <p>{homeworld}</p></div>
+                    <p>Nada</p></div>
                 </div>
             </div>
             <div className="Links">
@@ -65,6 +93,34 @@ export function CardG({ img, data }) {
                 </div>
             </div>
 
+        </div>
+    );
+
+}
+
+
+export function CardGdos({ img, data }) {
+    if (!data) return null;
+    const { name, uid } = data;
+
+    return (
+        <div className="card1">
+            <div className="cardG">
+                <div className="cardBody">
+                    <img src={img}
+                        className="card-img-top"
+                        alt={name}
+                        onError={(e) => {
+                            e.target.src =
+                                "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+                        }}
+                    />
+                    <div className="datos">
+                    <h4 className="card-text">{name}</h4>
+                    <p>Nada</p></div>
+                </div>
+            </div>
+            
         </div>
     );
 }

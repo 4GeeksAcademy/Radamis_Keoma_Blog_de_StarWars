@@ -4,35 +4,37 @@ import useGlobalReducer from "../hooks/useGlobalReducer";  // Custom hook for ac
 import { CardG, CardGdos } from "../components/Card"
 import { useState, useEffect } from "react";
 
-export const Demo = () => {
+export const Demos = () => {
   // Access the global state and dispatch function using the useGlobalReducer hook.
   const { store, dispatch } = useGlobalReducer()
   const { uid } = useParams()
 
   useEffect(() => {
-  fetch(`https://www.swapi.tech/api/people/${uid}`)
+    fetch(`https://www.swapi.tech/api/planets/${uid}`)
       .then(res => res.json())
       .then(data => {
         dispatch({
-          type: "set_personaje",
+          type: "set_planeta",
           payload: data.result
         })
       })
       .catch(err => console.error(err))
 
+      
+
   }, [uid])
- if (!store.personaje) return <div>Carregando...</div>
+  if (!store.planeta) return <div>Carregando...</div>
 
   return (
     <>
-       <div className="container">
-        <CardG
-          img={`https://raw.githubusercontent.com/tbone849/star-wars-guide/master/build/assets/img/characters/${store.personaje.uid}.jpg`}
-          data={store.personaje}
-          name={store.personaje.properties.name}
+
+      <div className="container">
+        <CardGdos
+          img={`https://raw.githubusercontent.com/tbone849/star-wars-guide/master/build/assets/img/planets/${store.planeta.uid}.jpg`}
+          data={store.planeta}
+          name={store.planeta.properties.name}
         />
       </div>
-
     </>
   );
 };

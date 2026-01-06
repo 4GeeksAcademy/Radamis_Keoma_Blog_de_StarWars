@@ -7,7 +7,7 @@
     font-family: "Gill Sans", sans-serif;
     font-weight: 900;
     font-style: oblique;
-    margin-bottom: none;
+    margin-bottom: 10px;
 }
 
 .navbardos {
@@ -50,14 +50,14 @@
 }
 
 .card {
-    margin-left: 20px;
+    margin-left: 10px;
     background: rgb(252, 252, 252);
 }
 
 .card img {
     margin: auto;
-    width: 280px;
-    height: 250px;
+    width: 230px;
+    height: 200px;
 }
 
 .but {
@@ -92,9 +92,10 @@
 }
 
 .card1 {
-    margin: auto;
+    margin-top: 10px;
+    margin:auto;
     background: rgb(252, 252, 252);
-    width: 800px;
+    width: 900px;
     border: solid black 1px;
 }
 
@@ -112,4 +113,7 @@
 .datos h6 {
     color: rgb(94, 94, 234);
     margin-bottom: none;
+}
+.titulo {
+    text-align: center;
 }
