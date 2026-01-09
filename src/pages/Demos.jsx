@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";  // Custom hook for accessing the global state.
 import { CardG, CardGdos } from "../components/Card"
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const Demos = () => {
   // Access the global state and dispatch function using the useGlobalReducer hook.
@@ -20,7 +21,7 @@ export const Demos = () => {
       })
       .catch(err => console.error(err))
 
-      
+
 
   }, [uid])
   if (!store.planeta) return <div>Carregando...</div>
@@ -35,6 +36,9 @@ export const Demos = () => {
           name={store.planeta.properties.name}
         />
       </div>
+      <button className="botom">
+        <Link className="text" to={'https://scaling-disco-v67g6596499qfp95-3000.app.github.dev'}>BACK TO HOME</Link>
+      </button>
     </>
   );
 };

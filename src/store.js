@@ -4,6 +4,8 @@ export const initialStore = () => {
     message: null,
     personajes: [],
     planetas: [],
+    veiculos: [],
+    veiculo: null,
     planeta: null,
     personaje: null,
     todos: [
@@ -26,36 +28,61 @@ export default function storeReducer(store, action = {}) {
     case 'add_favoritos':
       const personaje = action.payload
 
+      if (store.favoritos.some(fav => fav.uid === personaje.uid)) {
+        return store;
+      }
+
+
       return {
         ...store,
         favoritos: [...store.favoritos, personaje]
       }
+
     case 'add_personajes':
       return {
         ...store,
         personajes: action.payload
       }
+
+    case "set_personaje":
+      return {
+        ...store,
+        personaje: action.payload
+      };
+
     case 'add_planetas':
       return {
         ...store,
         planetas: action.payload
       }
+
     case "set_planeta":
       return {
         ...store,
         planeta: action.payload
       };
-      case "set_personaje":
+
+    case 'add_veiculos':
       return {
         ...store,
-        personaje: action.payload
-      };
-    case 'delete_favoritos':
-      const uid = action.payload
-      return {
-        ...store,
-        favoritos: store.favoritos.filter(favorito => favorito.uid !== uid)
+        veiculos: action.payload
       }
+
+    case "set_veiculo":
+      return {
+        ...store,
+        veiculo: action.payload
+      };
+
+    case 'delete_favoritos': {
+      const { uid, type } = action.payload;
+
+      return {
+        ...store,
+        favoritos: store.favoritos.filter(
+          fav => !(fav.uid === uid && fav.type === type)
+        ) };
+    }
 
     case 'add_task':
 

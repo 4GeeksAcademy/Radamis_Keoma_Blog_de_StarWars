@@ -1,36 +1,38 @@
-// Import necessary components from react-router-dom and other parts of the application.
 import { useParams } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";  // Custom hook for accessing the global state.
-import { CardG, CardGdos } from "../components/Card"
+import { CardG, CardGtres } from "../components/Card"
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export const Demo = () => {
+export const Demoss = () => {
   // Access the global state and dispatch function using the useGlobalReducer hook.
   const { store, dispatch } = useGlobalReducer()
   const { uid } = useParams()
 
   useEffect(() => {
-    fetch(`https://www.swapi.tech/api/people/${uid}`)
+    fetch(`https://www.swapi.tech/api/starships/${uid}`)
       .then(res => res.json())
       .then(data => {
         dispatch({
-          type: "set_personaje",
+          type: "set_veiculo",
           payload: data.result
         })
       })
       .catch(err => console.error(err))
 
+
+
   }, [uid])
-  if (!store.personaje) return <div>Carregando...</div>
+  if (!store.veiculo) return <div>Carregando...</div>
 
   return (
     <>
+
       <div className="container">
-        <CardG
-          img={`https://raw.githubusercontent.com/tbone849/star-wars-guide/master/build/assets/img/characters/${store.personaje.uid}.jpg`}
-          data={store.personaje}
-          name={store.personaje.properties.name}
+        <CardGtres
+          img={`https://raw.githubusercontent.com/tbone849/star-wars-guide/master/build/assets/img/starships/${store.veiculo.uid}.jpg`}
+          data={store.veiculo}
+          name={store.veiculo.properties.name}
         />
       </div>
       <button className="botom">

@@ -1,7 +1,7 @@
 import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { Navbardos } from "../components/Navbar"
-import { CardP, CardPdos } from "../components/Card"
+import { CardP, CardPdos, CardPtres } from "../components/Card"
 import { useEffect, useState } from "react";
 
 
@@ -33,6 +33,19 @@ export const Home = () => {
 			})
 			.catch(err => console.error(err));
 	} 
+
+	const getVeiculos = async()=> {
+		fetch("https://www.swapi.tech/api/starships")
+			.then(res => res.json())
+			.then(responseAPI => {
+				dispatch({
+					type:"add_veiculos",
+					payload: responseAPI.results
+				})
+				console.log(store.veiculos);
+			})
+			.catch(err => console.error(err));
+	} 
 	
 	useEffect(() => {
 		if (store.personajes.length == 0)
@@ -40,6 +53,9 @@ export const Home = () => {
 		
 		if (store.planetas.length == 0)
 		{getPlanetas ()}
+
+		if (store.veiculos.length == 0)
+		{getVeiculos ()}
 	}, []);
 
 	return (
@@ -61,6 +77,15 @@ export const Home = () => {
 						img={`https://raw.githubusercontent.com/tbone849/star-wars-guide/master/build/assets/img/planets/${pl.uid}.jpg`}
 						data={pl}
 						name={pl.name} />
+				))}
+			</div>
+			<h3 className="titulo">VEICULOS</h3>
+			<div className="container d-flex justify-content-center flex-wrap gap-4 mt-4">
+				{store.veiculos.map(v => (
+					<CardPtres key={v.uid}
+						img={`https://raw.githubusercontent.com/tbone849/star-wars-guide/master/build/assets/img/starships/${v.uid}.jpg`}
+						data={v}
+						name={v.name} />
 				))}
 			</div>
 		</div>
