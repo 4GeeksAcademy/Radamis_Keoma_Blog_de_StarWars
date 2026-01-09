@@ -7,7 +7,7 @@
     font-family: "Gill Sans", sans-serif;
     font-weight: 900;
     font-style: oblique;
-    margin-bottom: none;
+    margin-bottom: 10px;
 }
 
 .navbardos {
@@ -36,11 +36,11 @@
     justify-content: left;
     align-items: start;
     margin-left: none;
-    margin-right: 35px;
+    margin-right: 40px;
     background: none;
     border: none;
     width: 10px;
-    font-size: 40px;
+    font-size: 30px;
     color: white;
     text-shadow:
         -1px -1px 0 black,
@@ -50,14 +50,14 @@
 }
 
 .card {
-    margin-left: 20px;
+    margin-left: 10px;
     background: rgb(252, 252, 252);
 }
 
 .card img {
     margin: auto;
-    width: 280px;
-    height: 250px;
+    width: 230px;
+    height: 200px;
 }
 
 .but {
@@ -92,9 +92,10 @@
 }
 
 .card1 {
-    margin: auto;
+    margin-top: 10px;
+    margin:auto;
     background: rgb(252, 252, 252);
-    width: 800px;
+    width: 900px;
     border: solid black 1px;
 }
 
@@ -112,4 +113,29 @@
 .datos h6 {
     color: rgb(94, 94, 234);
     margin-bottom: none;
+}
+.titulo {
+    text-align: center;
+}
+
+.cajaInfo {
+    width: 500px;
+    height: 350px;
+
+}
+
+.botom {
+    background: rgb(28, 130, 225);
+    opacity: 70%;
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+}
+
+.text {
+   color: black;
+   text-align: center;
+}
+.teste {
+    background: red;
 }
